@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <nav><h1 class="hover-text" id="home-link">Home</h1><h1 class="hover-text" id="add-product-link">Add New Product</h1><h1 class="hover-text">Search</h1></nav>
+    <h1><u>Product Page</u></h1>
+    <div id="pop-up">
+        <h2>How many would you like to purchase?</h2>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount">
+        <button id="purchase-button">purchase?</button>
+    </div>
+    <div id="container">
+        <h2 id="product-title"></h2>
+        <p class="text-boxes" id="description"></p>
+        <p class="text-boxes" id="price"></p>
+        <p class="text-boxes" id="stock"></p>
+        <button id="buy-button">BUY</button>
+        <p id="edit">Edit this product</p>
+        <button id="delete-button">Delete This Product</button>
+    </div>
+</body>
+</html>

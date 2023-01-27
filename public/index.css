@@ -1,0 +1,76 @@
+body {
+    background-color: wheat;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 50%;
+    height: 8%;
+    background-color: rgb(195, 169, 121);
+    box-shadow: 10px 10px black;
+    margin: auto;
+}
+
+#container {
+    display: flex;
+    background-color: rgb(255, 211, 130);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: -20px;
+}
+
+.product-container {
+    width: calc((100% / 3) - 80px);
+    margin: 20px 10px 20px 10px;
+    padding: 0px 20px 0px 20px;
+    height: 600px;
+    background-color: rgb(172, 104, 59);
+}
+
+.product-container:hover {
+    box-shadow: inset whitesmoke 0px 10px 10px;
+}
+
+.hover-text:hover {
+    color: rgb(8, 0, 94);
+    box-shadow: 0px 1px rgb(32, 32, 32);
+}
+
+.product-img {
+    max-width: 100%;
+    max-height: 50%;
+}
+
+#search-bar-container {
+    display: none;
+}
+
+#search-bar {
+    height: 60%;
+    padding-left: 20px;
+    background-image: url("../images/search.png");
+    background-repeat: no-repeat;
+    background-size: 14px;
+    background-position: left center;
+}
+
+#search-button {
+    width: 50px;
+    border: none;
+    background-color: rgb(83, 126, 186);
+}
+
+#search-button:hover {
+    box-shadow: inset 0px 2px 4px rgb(87, 87, 87), inset 0px -2px 4px rgb(87, 87, 87);
+}
+
+#search-button:active {
+    box-shadow: inset 0px 2px 4px rgb(0, 0, 0), inset 0px -2px 4px rgb(0, 0, 0);
+}

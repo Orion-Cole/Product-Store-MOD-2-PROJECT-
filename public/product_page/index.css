@@ -1,0 +1,78 @@
+body {
+    background-color: wheat;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    width: 50%;
+    background-color: rgb(195, 169, 121);
+    box-shadow: 10px 10px black;
+    margin: auto;
+}
+
+.hover-text:hover {
+    color: rgb(8, 0, 94);
+    box-shadow: 0px 1px rgb(32, 32, 32);
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    /* background-color: rgb(108, 30, 30); */
+    width: 40%;
+    background-color: rgb(181, 103, 34);
+    margin: auto;
+    box-shadow: 15px 15px rgb(125, 71, 24);
+}
+
+button {
+    text-decoration: none;
+    width: 100px;
+    height: 70px;
+    background-color: rgb(29, 114, 167);
+    border: none;
+    font-size: 20px;
+    box-shadow: 0px -5px rgb(17, 62, 91) inset;
+}
+
+button:hover {
+    background-color: rgb(34, 131, 192);
+}
+
+button:active {
+    height: 68px;
+    box-shadow: 0px -2px rgb(17, 62, 91) inset;
+    margin-bottom: 2px;
+}
+
+.text-boxes {
+    background-color: rgba(250, 235, 215, 0.662);
+}
+
+#pop-up {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 40px; */
+    background-color: rgb(208, 199, 99);
+    position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 500px;
+        width: 550px;
+    box-shadow: 0px 10px 10px rgb(58, 55, 27);
+}
+
+#amount {
+    width: 50px;
+}
