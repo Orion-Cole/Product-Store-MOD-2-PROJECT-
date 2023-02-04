@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap'); /*Lato light 300 |*/
+
+body {
+    /* display: grid;
+    grid-template-columns: 1fr 11fr 1fr;
+    grid-template-rows:  120px 170px 1fr 80px; */
+    background-color: #085573;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0px;
+    font-family: 'Lato';
+}
+
+#cart-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-div {
+    position: relative;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: rgb(231, 209, 179);
+    width: 20%;
+}
+
+#total {
+    margin-bottom: 20px;
+}
+
+button {
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(217, 142, 36);
+    border: none;
+    font-size: 16px;
+    margin: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(34, 131, 192);
+}
+
+button:active {
+    background-color: rgb(32, 118, 172);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .item-div .close {
+    position: absolute;
+    top: 0;
+    left: 93%;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: rgb(233, 27, 27);
+    text-decoration: none;
+    cursor: pointer;
+  }

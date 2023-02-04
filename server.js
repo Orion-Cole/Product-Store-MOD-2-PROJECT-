@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose');
 const MyProduct = require('./models/product');
+const MyCart = require('./models/cart');
 require('dotenv').config()
 const app = express()
 app.use(express.json());
@@ -19,13 +20,14 @@ mongoose.connection.once('open', ()=> {
 
 app.post('/create_product', async (req, res) => {
     console.log(req.body);
-    let {name, description, price, stock, img} = req.body;
+    let {name, description, price, stock, img, rating} = req.body;
     let returnedValue = await MyProduct.create({
         name,
         description,
         price,
         stock,
-        img
+        img,
+        rating
     })
     console.log(returnedValue);
     if (returnedValue) {
@@ -33,6 +35,33 @@ app.post('/create_product', async (req, res) => {
     }
     res.send(returnedValue);
 })
+
+app.post('/add_to_cart/:product_id/:product_name', async (req, res) => { //------------------------------
+    console.log('CART POST SUCCESS');
+   
+    let cartResponse = await MyCart.create({
+        id: `${req.params.product_id}`,
+        name: `${req.params.product_name}`
+    })
+
+    res.send(cartResponse)
+})
+
+app.delete('/delete_from_cart/:product_name', async (req, res) => {
+    let response = await MyCart.deleteOne({name: `${req.params.product_name}`})
+    res.send(response)
+})
+
+app.delete('/delete_from_cart', async (req, res) => {
+    let response = await MyCart.deleteMany({})
+    res.send(response)
+})
+
+app.get('/get_cart', async (req, res) => {
+    let cartResponse = await MyCart.find({})
+    res.json(cartResponse)
+})
+
 
 app.get('/get_products', async (req, res) => {
     let productsResponse = await MyProduct.find({})
@@ -46,7 +75,7 @@ app.get('/get_product/:product_id', async (req, res) => {
 
 app.put('/update_product/:product_id', async (req, res) => {
     console.log(req.body);
-    let response = await MyProduct.findByIdAndUpdate(req.params.product_id, {name: req.body.name, description: req.body.description, price: req.body.price, stock: req.body.stock, img: req.body.img})
+    let response = await MyProduct.findByIdAndUpdate(req.params.product_id, {name: req.body.name, description: req.body.description, price: req.body.price, stock: req.body.stock, img: req.body.img, rating: req.body.rating})
 })
 
 app.put('/buy_product/:product_id/:amount', async (req, res) => {

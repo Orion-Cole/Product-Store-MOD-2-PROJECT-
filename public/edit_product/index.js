@@ -18,6 +18,7 @@ document.getElementById('submit-button').addEventListener('click', async () => {
     let price = +document.getElementById('price-input').value
     let stock = +document.getElementById('stock-input').value
     let img = document.getElementById('img-input').value
+    let rating = +document.getElementById('rating-input').value
 
     const product = {
 
@@ -42,6 +43,10 @@ document.getElementById('submit-button').addEventListener('click', async () => {
     if (img != '') {
         console.log('good string');
         product.img = img;
+    }
+    if (rating != '') {
+        console.log('good num');
+        product.rating = rating;
     }
 
     console.log(product);

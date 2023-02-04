@@ -7,24 +7,61 @@
     <title>Product Page</title>
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
+    <script src="https://kit.fontawesome.com/393bdf76e7.js" crossorigin="anonymous"></script> <!--font awesome icon library--> 
 </head>
 <body>
-    <nav><h1 class="hover-text" id="home-link">Home</h1><h1 class="hover-text" id="add-product-link">Add New Product</h1><h1 class="hover-text">Search</h1></nav>
-    <h1><u>Product Page</u></h1>
+    <nav><h1 class="hover-text" id="home-link">Home</h1> <h1 class="hover-text" id="add-product-link">Add New Product</h1> <div id="search-bar-container"><input id="search-bar" type="search" placeholder="Search"><button id="search-button"><img src="../images/search.png" width="10px" height="10px"></button></div><span id="search-icon" class="fa-solid fa-magnifying-glass fa-lg"></span></nav>    <!-- <h1>Product Page</h1> -->
     <div id="pop-up">
-        <h2>How many would you like to purchase?</h2>
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount">
-        <button id="purchase-button">purchase?</button>
+        <img id="cart-popup-image" alt="product image">
+        <h2 id="add-cart-title"><span>item </span>added to cart</h2>
+        <button id="continue-shopping-button">Continue Shopping</button>
+        <div id="check-out-buttons">
+            <button id="go-to-cart">Go to Cart</button>
+            <button id="go-to-checkout">Check Out</button>
+        </div>
+        
     </div>
     <div id="container">
-        <h2 id="product-title"></h2>
-        <p class="text-boxes" id="description"></p>
-        <p class="text-boxes" id="price"></p>
-        <p class="text-boxes" id="stock"></p>
-        <button id="buy-button">BUY</button>
-        <p id="edit">Edit this product</p>
-        <button id="delete-button">Delete This Product</button>
+        <div id="img-container">
+            <img id="product-image" alt="Product Image">
+            <span id="button-span">
+                <button id="edit-button">Edit</button>
+                <button id="delete-button">Delete</button>
+            </span>
+        </div>
+        
+        <div id="title-div">
+            <h1 id="product-title"></h1>
+            <span id="rating-div">
+            </span>
+            
+        </div>
+
+    
+
+        <p id="description">
+        </p>
+        
+        <div id="buy-div">
+            <p id="price"></p>
+            <p id="stock"></p>
+            <label for="amount">Amount</label>
+            <select name="amount" id="amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <button id="add-to-cart-button">Add to Cart</button>
+            <button id="buy-now-button">Buy Now</button>
+        </div>
+        
     </div>
 </body>
 </html>

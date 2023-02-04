@@ -8,13 +8,15 @@ document.getElementById('submit-button').addEventListener('click', async () => {
     let price = +document.getElementById('price-input').value
     let stock = +document.getElementById('stock-input').value
     let img = document.getElementById('img-input').value
+    let rating = +document.getElementById('rating-input').value
 
     const product = {
         name,
         description,
         price,
         stock,
-        img
+        img,
+        rating
     }
 
     let response = await fetch('http://localhost:5000/create_product', {
