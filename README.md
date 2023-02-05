@@ -23,17 +23,17 @@
 👤 **Orion Cole**
 
 * Github: [@Orion-Cole](https://github.com/Orion-Cole)
-* LinkedIn: [@Orion Cole](https://linkedin.com/in/Orion Cole)
+* LinkedIn: [@Orion-Cole](https://linkedin.com/in/Orion-Cole)
 
 ## Tech Stack:
 
--JavaScript
--HTML
--CSS
--MongoDB
--Mongoose
--Express
--Node
+- JavaScript
+- HTML
+- CSS
+- MongoDB
+- Mongoose
+- Express
+- Node
 
 ## Project Details:
 
