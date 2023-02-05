@@ -23,7 +23,7 @@
 👤 **Orion Cole**
 
 * Github: [@Orion-Cole](https://github.com/Orion-Cole)
-* LinkedIn: [@Orion-Cole](https://linkedin.com/in/Orion-Cole)
+* LinkedIn: [@Orion-Cole](www.linkedin.com/in/orion-cole-8524b6246)
 
 ## Tech Stack:
 
@@ -86,7 +86,8 @@
 ## Additional Project Features (Bonus!):
 - -placeholder-
 
-
+## 🙏 Attributions
+- Icons from [Fontawesome](https://fontawesome.com)
 
 ## Show your support
 
