@@ -1,13 +1,13 @@
 {
   "name": "product_store_mod2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Module 2 project - A mockup of a webstore that interacts with MongooseDB",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-  "author": "",
+  "author": "Orion Cole",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",

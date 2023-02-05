@@ -76,16 +76,25 @@ app.get('/get_product/:product_id', async (req, res) => {
 app.put('/update_product/:product_id', async (req, res) => {
     console.log(req.body);
     let response = await MyProduct.findByIdAndUpdate(req.params.product_id, {name: req.body.name, description: req.body.description, price: req.body.price, stock: req.body.stock, img: req.body.img, rating: req.body.rating})
+    res.send('successful update')
 })
 
 app.put('/buy_product/:product_id/:amount', async (req, res) => {
     console.log(req.params.product_id);
     console.log(req.params.amount);
-     let response = await MyProduct.findByIdAndUpdate(req.params.product_id, {$inc: {stock: -req.params.amount}})
+    let response = await MyProduct.findByIdAndUpdate(req.params.product_id, {$inc: {stock: -req.params.amount}})
+    res.send('successful purchase')
 })
+
+// app.put('/buy_cart_products', async (req, res) => { //----------------
+//     //console.log(req.params.product_id);
+//     //console.log(req.params.amount);
+//      let response = await MyProduct.findByIdAndUpdate(req.params.product_id, {$inc: {stock: -req.params.amount}})
+// })
 
 app.delete('/delete_product/:product_id', async (req, res) => {
     let response = await MyProduct.findByIdAndDelete(req.params.product_id)
+    res.send('successful deletion')
 })
 
 

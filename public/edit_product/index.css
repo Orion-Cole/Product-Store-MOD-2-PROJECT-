@@ -1,22 +1,107 @@
 body {
-    background-color: wheat;
+    display: grid;
+    grid-template-columns: 1fr 11fr 1fr;
+    grid-template-rows:  120px 100px 1fr 80px;
+    background-color: #085573;
     text-align: center;
     box-sizing: border-box;
     height: 100vh;
     margin: 0px;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    width: 50%;
-    background-color: rgb(195, 169, 121);
-    box-shadow: 10px 10px black;
-    margin: auto;
+    font-family: 'Lato';
 }
 
 .hover-text:hover {
     color: rgb(8, 0, 94);
-    box-shadow: 0px 1px rgb(32, 32, 32);
+    cursor: pointer;
 }
+
+nav {
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    grid-row-start: 1;
+    grid-row-end: auto;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+    width: 90%;
+    height: 50%;
+    background-color: #103A3E;
+    margin-left: auto;
+    margin-right: auto;
+    color: #CED9D6;
+    border-radius: 0px 0px 100px 100px;
+    text-shadow:0px 2px 1px #0D2130;
+}
+
+    #cart-container {
+        margin-left: 80%;
+        position: absolute;
+    }
+
+    #cart-icon {
+        cursor: pointer;
+    }
+
+    #cart-icon:hover {
+        color: rgb(8, 0, 94);;
+    }
+
+button {
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(217, 142, 36);
+    border: none;
+    font-size: 16px;
+    margin: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(34, 131, 192);
+}
+
+button:active {
+    background-color: rgb(32, 118, 172);
+}
+
+#title {
+    grid-column-start: 2;
+    grid-column-end: auto;
+    grid-row-start: 2;
+    grid-row-end: auto;
+    margin: 0px auto 0px auto;
+}
+
+#container {
+    grid-column-start: 2;
+    grid-column-end: auto;
+    grid-row-start: 3;
+    grid-row-end: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin: 0px auto 0px auto;
+    background-color: darkslategrey;
+}
+
+    .input-container {
+        margin: 0px 0px 10px 0px;
+    }
+
+    label {
+        font-size: 21px;
+        color: #CED9D6;
+    }
+
+    input {
+        background-color: rgb(147, 166, 183);
+        border: 0px;
+        height: 30px;
+        font-size: 18px;
+
+    }

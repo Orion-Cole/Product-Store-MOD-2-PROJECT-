@@ -2,6 +2,7 @@ const params = new Proxy(new URLSearchParams(window.location.search),{
     get: (searchParams, prop) => searchParams.get(prop),
 });
 
+let totalStock;
 let product_id = params.product_id;
 let product_name = params.product_name;
 console.log('product id: ' + product_id);
@@ -12,6 +13,9 @@ const getData = async () => {
     data.json().then((parsedData) => {
         console.log(parsedData);
         console.log(parsedData[0].name);
+
+        totalStock = parsedData[0].stock
+
         document.getElementById('product-image').setAttribute("src", `${parsedData[0].img}`);
         document.getElementById('cart-popup-image').setAttribute("src", `${parsedData[0].img}`);
         document.getElementById('product-title').textContent = parsedData[0].name;
@@ -92,6 +96,9 @@ const getData = async () => {
                 document.getElementById('add-to-cart-button').style.backgroundColor = 'rgb(169, 54, 54)';
                 document.getElementById('add-to-cart-button').style.boxShadow = '0px -5px rgb(108, 30, 30) inset';
                 document.getElementById('add-to-cart-button').disabled = 'true';
+                document.getElementById('buy-now-button').style.backgroundColor = 'rgb(169, 54, 54)';
+                document.getElementById('buy-now-button').style.boxShadow = '0px -5px rgb(108, 30, 30) inset';
+                document.getElementById('buy-now-button').disabled = 'true';
             } else if (parsedData[0].stock <= 5) {
                 document.getElementById('stock').textContent = `Only ${parsedData[0].stock} left!`;
             }
@@ -126,19 +133,52 @@ document.getElementById('search-button').addEventListener('click', async () => {
 
 document.getElementById('add-to-cart-button').addEventListener('click', async () => { //------------------------
     document.getElementById('pop-up').style.display = 'grid';
-    for (var i=0;i<document.getElementById('amount').value;i++) {
-        let response = await fetch(`http://localhost:5000/add_to_cart/${product_id}/${product_name}`, {
-            method: 'POST'
-        })
-        console.log('add to cart response: ' + response);
+    const amount = document.getElementById('amount').value;
+    //if amount added to cart exceeds amount in stock return error and add as many as possible to cart
+    console.log('TOTALSTOCK = ',totalStock);
+    if (amount <= totalStock) {
+        for (var i=0;i<amount;i++) {
+            let response = await fetch(`http://localhost:5000/add_to_cart/${product_id}/${product_name}`, {
+                method: 'POST'
+            })
+            console.log('add to cart response: ' + response);
+        }
+    } else {
+        console.log('NOT ENOUGH IN STOCK TO ADD TO CART')
+        for (var i=0;i<totalStock;i++) {
+            let response = await fetch(`http://localhost:5000/add_to_cart/${product_id}/${product_name}`, {
+                method: 'POST'
+            })
+            console.log('add to cart response: ' + response);
+        }
     }
+    
 })
 
-document.getElementById('delete-button').addEventListener('click', async () => {
+const deleteProduct = async () => {
     let response = await fetch(`http://localhost:5000/delete_product/${product_id}`, {
         method: 'DELETE'
     }).then(window.location.href = `/`)
+}
+
+document.getElementById('delete-button').addEventListener('click', async () => {
+   //open popup to confirm deletion
+    document.querySelector('.modal').style.display = 'block';
 })
+
+document.getElementById('modal-delete-button').addEventListener('click', async ()=> {
+    await deleteProduct()
+    document.querySelector('.modal').style.display = 'none';
+})
+
+document.querySelector('.close').addEventListener('click', () => {
+    document.querySelector('.modal').style.display = 'none';
+})
+
+
+
+
+
 
 document.getElementById('buy-now-button').addEventListener('click', async () => {
     location.reload()

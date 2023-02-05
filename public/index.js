@@ -140,10 +140,10 @@ displayCart()
 
 document.getElementById('search-icon').addEventListener('click', () => {
     let bar = document.getElementById('search-bar-container');
-    if (bar.style.display == 'block') {
+    if (bar.style.display == 'flex') {
         bar.style.display = 'none'
     } else {
-        bar.style.display = 'block'
+        bar.style.display = 'flex'
         document.getElementById('search-bar').focus()
     }
 })
@@ -161,13 +161,15 @@ let search = async () => {
             if (input.toUpperCase() == object.name.toUpperCase()) {
                 console.log('Match found: ' + object.name);
                 window.location.href = `/product_page?product_id=${object._id}`
-            } else {
-                document.getElementById('search-bar').value = '';
-                document.getElementById('search-bar').setAttribute("placeholder", "NO MATCH")
-            }
+            } 
+            // else {
+            //     document.getElementById('search-bar').value = '';
+            //     document.getElementById('search-bar').setAttribute("placeholder", "NO RESULTS")
+            // }
         })
     })
 }
+
 
 document.getElementById('search-button').addEventListener('click', search)
 

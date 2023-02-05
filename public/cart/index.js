@@ -9,14 +9,17 @@ const getDetails = async (id) => {
 
 
 
-
-    document.getElementById('remove-all').addEventListener('click', async () => { //---------button to remove all from list
+    const emptyCart = async () => {
         let removeItemsRes = await fetch(`/delete_from_cart`, {
             method: 'DELETE'
         })
         location.reload()
-    })
+    }
+    
 
+    document.getElementById('remove-all').addEventListener('click', async () => { //---------button to remove all from list
+        emptyCart()
+    })
 
 
 
@@ -64,6 +67,8 @@ const displayCart = async () => {
             console.log(tally.toFixed(2));
             let totalCost = document.getElementById('total')
             totalCost.innerHTML = `<h2>Total cost: $${tally.toFixed(2)}</h2>`
+
+            document.getElementById('modal-total').innerText = `$${tally.toFixed(2)}`
         })
       
         })
@@ -83,4 +88,29 @@ document.getElementById('purchase-button').addEventListener('click', () => {
 
 document.getElementById('close-modal').addEventListener('click', () => {
     document.querySelector('.modal').style.display = 'none'
+})
+
+
+// document.getElementById('modal-buy-button').addEventListener('click', async () => {
+//     document.querySelector('.modal').style.display = 'none'
+//     let response = await fetch(`http://localhost:5000/buy_cart_products`, {
+//         method: 'PUT'
+//     })
+//     //location.reload()
+// })
+
+
+document.getElementById('modal-buy-button').addEventListener('click', async () => {
+    document.querySelector('.modal').style.display = 'none'
+    let data = await fetch('/get_cart')
+    data.json().then((parsedData) => {
+        parsedData.forEach(async (item) => {
+            console.log('item:', item);
+            let response = await fetch(`http://localhost:5000/buy_product/${item.id}/${1}`, {
+                method: 'PUT'
+            })
+            
+        })
+        emptyCart()
+    })
 })

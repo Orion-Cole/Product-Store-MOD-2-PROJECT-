@@ -26,13 +26,4 @@ document.getElementById('submit-button').addEventListener('click', async () => {
         },
         body: JSON.stringify(product)
     }).then(window.location.href = '/')
-
-
-
-
-
-
-
-
-
 })

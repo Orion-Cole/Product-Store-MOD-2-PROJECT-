@@ -7,40 +7,38 @@
     <title>Create new product</title>
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
+    <script src="https://kit.fontawesome.com/393bdf76e7.js" crossorigin="anonymous"></script> <!--font awesome icon library--> 
 </head>
 <body>
-    <nav><h1 class="hover-text" id="home-link">Home</h1><h1 class="hover-text">Add New Product</h1><h1 class="hover-text">Search</h1></nav>
-    <h1><u>Create Product</u></h1>
+    <nav><h1 class="hover-text" id="home-link">Home</h1> <span id="cart-container"><span id="cart-num"></span><span id="cart-icon" class="fa-solid fa-cart-shopping fa-lg"></span></span></nav>
+    <h1 id="title">Create New Product</h1>
     <div id="container">
-        <p id="upload-status">
-
-        </p>
         <div class="input-container">
-            <label for="name-input">Name</label>
+            <label for="name-input">Name</label><br/>
             <input type="text" id="name-input"/>
         </div>
         <div class="input-container">
-            <label for="color-input">Description</label>
+            <label for="color-input">Description</label><br/>
             <input type="text" id="description-input"/>
         </div>
         <div class="input-container">
-            <label for="age-input">Price</label>
+            <label for="age-input">Price</label><br/>
             <input type="number" step="any" id="price-input"/>
         </div>
         <div class="input-container">
-            <label for="name-input">Stock</label>
+            <label for="name-input">Stock</label><br/>
             <input type="number" step="any" id="stock-input"/>
         </div>
         <div class="input-container">
-            <label for="img-input">Image Link</label>
+            <label for="img-input">Image Link</label><br/>
             <input type="text" id="img-input"/>
         </div>
         <div class="input-container">
-            <label for="rating-input">Rating</label>
+            <label for="rating-input">Rating</label><br/>
             <input type="number" step="any" id="rating-input"/>
         </div>
         
-        <button id="submit-button">create product</button>
+        <button id="submit-button">Create Product</button>
     </div>
 </body>
 </html>
