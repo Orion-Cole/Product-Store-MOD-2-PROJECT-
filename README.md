@@ -9,27 +9,14 @@
   </a>
 </p>
 
-> Module 2 project - A mockup of a webstore that interacts with MongooseDB
+> Per Scholas Module 2 Project - The purpose of this project was to create a mockup of an online webstore that interacts with a database (MongoDB). It is a full CRUD application with the ability to add products to the store, browse and search through the store, edit product data, and delete products from the store.
+
 
 ### 🏠 [Homepage](https://github.com/Orion-Cole/Product-Store-MOD-2-PROJECT-)
 
-## Install
+## Demo:
+- placeholder for video demonstration
 
-<!-- ```sh
-npm install
-```
-
-## Usage
-
-```sh
-npm run start
-```
-
-## Run tests
-
-```sh
-npm run test -->
-```
 
 ## Author
 
@@ -44,6 +31,7 @@ npm run test -->
 -HTML
 -CSS
 -MongoDB
+-Mongoose
 -Express
 -Node
 
@@ -96,7 +84,7 @@ npm run test -->
 5. In lieu of presentations, you MUST create a video (on YouTube, Vimeo, etc...) of you showcasing your application and code. This video needs to be in your README file, and
 
 ## Additional Project Features (Bonus!):
-
+- -placeholder-
 
 
 
