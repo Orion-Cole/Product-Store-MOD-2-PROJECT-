@@ -15,7 +15,7 @@
 ### 🏠 [Homepage](https://github.com/Orion-Cole/Product-Store-MOD-2-PROJECT-)
 
 ## App demo and code overview:
-[Video Link](https://clipchamp.com/watch/UWoUABxhWK7)
+[Video Link](https://youtu.be/vag_fHrpSs8)
 
 
 ## Author
