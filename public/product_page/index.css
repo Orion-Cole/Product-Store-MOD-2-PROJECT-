@@ -37,6 +37,9 @@ nav {
 
 #search-bar-container {
     display: none;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
 }
 
 #search-icon {
@@ -48,18 +51,32 @@ nav {
 }
 
 #search-bar {
-    height: 60%;
+    height: 80%;
     padding-left: 20px;
     background-image: url("../images/search.png");
     background-repeat: no-repeat;
     background-size: 14px;
     background-position: left center;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+}
+
+#search-bar:hover {
+    background-color: #CED9D6;
+}
+
+#search-bar:focus {
+    background-color: #CED9D6;
 }
 
 #search-button {
-    width: 50px;
+    width: 40px;
+    height: 30px;
     border: none;
     background-color: rgb(83, 126, 186);
+    border-radius: 5px;
+    margin: 0px;
 }
 
 #search-button:hover {
@@ -68,6 +85,19 @@ nav {
 
 #search-button:active {
     box-shadow: inset 0px 2px 4px rgb(0, 0, 0), inset 0px -2px 4px rgb(0, 0, 0);
+}
+
+#cart-container {
+    margin-left: 80%;
+    position: absolute;
+}
+
+#cart-icon {
+    cursor: pointer;
+}
+
+#cart-icon:hover {
+    color: rgb(8, 0, 94);;
 }
 
 .hover-text:hover {
@@ -94,7 +124,6 @@ nav {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    /* box-shadow: 14px 14px 4px #000000; */
 }
 
 #cart-popup-image {
@@ -137,7 +166,6 @@ button {
     background-color: rgb(217, 142, 36);
     border: none;
     font-size: 16px;
-    /* box-shadow: 0px -5px rgb(17, 62, 91) inset; */
     margin: 20px;
     border-radius: 10px;
     cursor: pointer;
@@ -149,12 +177,7 @@ button:hover {
 
 button:active {
     background-color: rgb(32, 118, 172);
-    /* box-shadow: 0px -2px rgb(17, 62, 91) inset; */
 }
-
-/* .text-boxes {
-    background-color: rgba(250, 235, 215, 0.662);
-} */
 
 #title-div {
     grid-column-start: 2;
@@ -184,7 +207,7 @@ button:active {
     display: none;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: .8fr 1fr;
-    background-color: #F5EFD2;
+    background-color: #fefefe;
     color: black;
     position: absolute;
         top: 45%;
@@ -193,6 +216,12 @@ button:active {
         height: 500px;
         width: 550px;
     box-shadow: 0px 10px 10px black;
+}
+
+#close-pop-up {
+    position: absolute;
+    top: 6px;
+    left: 93%;
 }
 
 #amount {
@@ -204,7 +233,6 @@ button:active {
     flex-direction: column;
     align-items: center;
     height: 100%;
-    /* background-color: #00000000; */
     grid-column-start: 1;
     grid-column-end: auto;
     grid-row-start: 1;

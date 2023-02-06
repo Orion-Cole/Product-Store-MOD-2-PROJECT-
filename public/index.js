@@ -4,9 +4,7 @@ document.getElementById('add-product-link').addEventListener('click', () => {
     window.location.href = '/create_product'
 })
 
-
-
-const display = async () => {
+const display = async () => { //display all products by fetching from database
     console.log('GET DATA FUNCTION ACTIVATED');
     let data = await fetch('/get_products')
     
@@ -37,8 +35,7 @@ const display = async () => {
                         rating = 0
                     }
 
-                
-
+            
                 let starTally = 0;
                 let ratingContainer = document.createElement("span");
                     ratingContainer.setAttribute("id", "rating-container")
@@ -104,10 +101,6 @@ const display = async () => {
             div.addEventListener('click', () => {
                 window.location.href = `/product_page?product_id=${object._id}&product_name=${object.name}`;
             })
-
-
-
-            
         })
     })
 }
@@ -126,16 +119,6 @@ const displayCart = async () => {
 }
 
 displayCart()
-
-
-
-
-
-
-
-
-
-
 
 
 document.getElementById('search-icon').addEventListener('click', () => {
@@ -161,11 +144,7 @@ let search = async () => {
             if (input.toUpperCase() == object.name.toUpperCase()) {
                 console.log('Match found: ' + object.name);
                 window.location.href = `/product_page?product_id=${object._id}`
-            } 
-            // else {
-            //     document.getElementById('search-bar').value = '';
-            //     document.getElementById('search-bar').setAttribute("placeholder", "NO RESULTS")
-            // }
+            }
         })
     })
 }

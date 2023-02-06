@@ -3,11 +3,11 @@
 body {
     display: grid;
     grid-template-columns: 1fr 11fr 1fr;
-    grid-template-rows:  120px 170px 1fr 80px;
+    grid-template-rows:  120px 110px 1fr 80px;
     background-color: #085573;
     text-align: center;
     box-sizing: border-box;
-    height: 100vh;
+    height: auto;
     margin: 0px;
     font-family: 'Lato';
 }
@@ -36,7 +36,6 @@ nav {
         height: 70%;
         align-items: center;
         justify-content: center;
-        /* padding-top: 8px; */
     }
 
     #search-icon {
@@ -117,6 +116,7 @@ nav {
 }
 
 #container {
+    height: auto;
     background-color: #0D2130;
     border: 7px solid #103A3E;
     border-radius: 40px;
@@ -134,18 +134,16 @@ nav {
 }
 
 .product-container {
-    /* width: calc((100% / 3) - 80px); */
-    /* margin: 20px 10px 20px 10px;
-    padding: 0px 20px 0px 20px; */
-    /* height: 600px; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     background-color: #CED9D6;
+    border-radius: 10px;
+    height: 500px; /*this line of code was the solution to a 3 hour problem...*/
 }
 
 .product-container:hover {
-    box-shadow: inset whitesmoke 0px 10px 10px;
+    background-color: #c6d1ce;
     cursor: pointer;
 }
 
@@ -175,6 +173,7 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .checked {
@@ -182,7 +181,6 @@ nav {
 }
 
 footer {
-    /* background-color: #0D2130; */
     background-image: linear-gradient(#050d13,#0D2130,#0D2130,#0D2130);
     color: #CED9D6;
     grid-column-start: 1;

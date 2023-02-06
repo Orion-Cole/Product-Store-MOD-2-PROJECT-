@@ -27,22 +27,16 @@ nav {
     width: 90%;
     height: 50%;
     background-color: #103A3E;
-    /* box-shadow: 10px 10px black; */
     margin-left: auto;
     margin-right: auto;
     color: #CED9D6;
-    /* border: 7px solid #0D2130; */
     border-radius: 0px 0px 100px 100px;
     text-shadow:0px 2px 1px #0D2130;
 }
 
     #cart-container {
-        /* border: red 1px solid; */
         margin-left: 80%;
         position: absolute;
-        /* display: flex;
-        justify-content: end; */
-        
     }
 
     #cart-icon {
@@ -109,5 +103,4 @@ button:active {
         border: 0px;
         height: 30px;
         font-size: 18px;
-
     }

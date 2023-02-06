@@ -27,3 +27,20 @@ document.getElementById('submit-button').addEventListener('click', async () => {
         body: JSON.stringify(product)
     }).then(window.location.href = '/')
 })
+
+const displayCart = async () => {
+    console.log('fetching cart data..');
+
+    let data = await fetch('/get_cart')
+    data.json().then((parsedData) => {
+        if (parsedData.length > 0) {
+            document.getElementById('cart-num').textContent = `${parsedData.length}`;
+        }
+    })
+}
+
+displayCart()
+
+document.getElementById('cart-icon').addEventListener('click', () => {
+    window.location.href = '/cart'
+})

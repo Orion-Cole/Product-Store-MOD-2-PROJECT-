@@ -84,10 +84,13 @@
 5. In lieu of presentations, you MUST create a video (on YouTube, Vimeo, etc...) of you showcasing your application and code. This video needs to be in your README file, and
 
 ## Additional Project Features (Bonus!):
-- -placeholder-
+- Ability to add items to a cart
+- Search bar for searching through all store items
+- Products include a star rating
 
 ## 🙏 Attributions
 - Icons from [Fontawesome](https://fontawesome.com)
+- Favicon from [Icons8](https://icons8.com/)
 
 ## Show your support
 

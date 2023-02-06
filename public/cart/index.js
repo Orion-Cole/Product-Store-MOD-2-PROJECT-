@@ -114,3 +114,63 @@ document.getElementById('modal-buy-button').addEventListener('click', async () =
         emptyCart()
     })
 })
+
+document.getElementById('add-product-link').addEventListener('click', () => {
+    window.location.href = '/create_product'
+})
+
+document.getElementById('home-link').addEventListener('click', () => {
+    window.location.href = '/'
+})
+
+document.getElementById('search-icon').addEventListener('click', () => {
+    let bar = document.getElementById('search-bar-container');
+    if (bar.style.display == 'flex') {
+        bar.style.display = 'none'
+    } else {
+        bar.style.display = 'flex'
+        document.getElementById('search-bar').focus()
+    }
+})
+
+let search = async () => {
+    let input = document.getElementById('search-bar').value;
+    let data = await fetch('/get_products')
+    data.json().then((parsedData) => {
+        parsedData.forEach((object) => {
+            if (input.toUpperCase() == object.name.toUpperCase()) {
+                console.log('Match found: ' + object.name);
+                window.location.href = `/product_page?product_id=${object._id}`
+            } 
+            // else {
+            //     document.getElementById('search-bar').value = '';
+            //     document.getElementById('search-bar').setAttribute("placeholder", "NO RESULTS")
+            // }
+        })
+    })
+}
+
+
+document.getElementById('search-button').addEventListener('click', search)
+
+
+document.getElementById('search-bar').addEventListener('keypress', (event) => {
+    console.log("KEYPRESS");
+    if (event.code == 'Enter') {
+        console.log("KEYPRESS = ENTER");
+        search()
+    }
+})
+
+const displayCartAmount = async () => {
+    console.log('fetching cart data..');
+
+    let data = await fetch('/get_cart')
+    data.json().then((parsedData) => {
+        if (parsedData.length > 0) {
+            document.getElementById('cart-num').textContent = `${parsedData.length}`;
+        }
+    })
+}
+
+displayCartAmount()

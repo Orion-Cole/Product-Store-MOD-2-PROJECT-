@@ -6,12 +6,6 @@ let product_id = params.product_id;
 console.log(product_id);
 
 
-
-
-
-
-
-
 document.getElementById('submit-button').addEventListener('click', async () => {
     let name = document.getElementById('name-input').value
     let description = document.getElementById('description-input').value
@@ -60,15 +54,23 @@ document.getElementById('submit-button').addEventListener('click', async () => {
     }).then(window.location.href = `/product_page?product_id=${product_id}`)//redirects to product page
 })
 
-
-
-
-
-
-document.getElementById('add-product-link').addEventListener('click', () => {
-    window.location.href = '/create_product'
-})
-
 document.getElementById('home-link').addEventListener('click', () => {
     window.location.href = '/'
+})
+
+const displayCart = async () => {
+    console.log('fetching cart data..');
+
+    let data = await fetch('/get_cart')
+    data.json().then((parsedData) => {
+        if (parsedData.length > 0) {
+            document.getElementById('cart-num').textContent = `${parsedData.length}`;
+        }
+    })
+}
+
+displayCart()
+
+document.getElementById('cart-icon').addEventListener('click', () => {
+    window.location.href = '/cart'
 })

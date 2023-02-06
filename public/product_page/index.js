@@ -76,9 +76,6 @@ const getData = async () => {
                     }
                 }
 
-
-
-
         document.getElementById('description').textContent = parsedData[0].description;
 
 
@@ -86,7 +83,6 @@ const getData = async () => {
             let fraction = parsedData[0].price.toFixed(2) - Math.floor(parsedData[0].price);
             let stringFraction = fraction.toFixed(2).toString()
             let newFraction = stringFraction.slice(1)
-            // console.log(newFraction);
             let whole = parsedData[0].price - fraction;
             document.getElementById('price').innerHTML = `$${whole}<sup>${newFraction}</sup>`
 
@@ -108,15 +104,20 @@ getData()
 
 document.getElementById('search-icon').addEventListener('click', () => {
     let bar = document.getElementById('search-bar-container');
-    if (bar.style.display == 'block') {
+    if (bar.style.display == 'flex') {
         bar.style.display = 'none'
     } else {
-        bar.style.display = 'block'
+        bar.style.display = 'flex'
         document.getElementById('search-bar').focus()
     }
 })
 
-document.getElementById('search-button').addEventListener('click', async () => {
+
+document.getElementById('cart-icon').addEventListener('click', () => {
+    window.location.href = '/cart'
+})
+
+let search = async () => {
     let input = document.getElementById('search-bar').value;
     let data = await fetch('/get_products')
     data.json().then((parsedData) => {
@@ -124,9 +125,21 @@ document.getElementById('search-button').addEventListener('click', async () => {
             if (input.toUpperCase() == object.name.toUpperCase()) {
                 console.log('Match found: ' + object.name);
                 window.location.href = `/product_page?product_id=${object._id}`
-            }
+            } 
         })
     })
+}
+
+
+document.getElementById('search-button').addEventListener('click', search)
+
+
+document.getElementById('search-bar').addEventListener('keypress', (event) => {
+    console.log("KEYPRESS");
+    if (event.code == 'Enter') {
+        console.log("KEYPRESS = ENTER");
+        search()
+    }
 })
 
 
@@ -171,11 +184,14 @@ document.getElementById('modal-delete-button').addEventListener('click', async (
     document.querySelector('.modal').style.display = 'none';
 })
 
-document.querySelector('.close').addEventListener('click', () => {
+document.getElementById('close-modal').addEventListener('click', () => {
     document.querySelector('.modal').style.display = 'none';
 })
 
-
+document.getElementById('close-pop-up').addEventListener('click', () => {
+    document.getElementById('pop-up').style.display = 'none';
+    location.reload()
+})
 
 
 
@@ -188,11 +204,6 @@ document.getElementById('buy-now-button').addEventListener('click', async () => 
     })
 })
 
-
-
-
-
-
 document.getElementById('continue-shopping-button').addEventListener('click', () => {
     window.location.href = '/'
 })
@@ -200,20 +211,6 @@ document.getElementById('continue-shopping-button').addEventListener('click', ()
 document.getElementById('go-to-cart').addEventListener('click', () => {
     window.location.href = '/cart'
 })
-
-document.getElementById('go-to-checkout').addEventListener('click', () => {
-    window.location.href = '/checkout'
-})
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -228,3 +225,17 @@ document.getElementById('home-link').addEventListener('click', () => {
 document.getElementById('edit-button').addEventListener('click', () => {
     window.location.href = `/edit_product?product_id=${product_id}`
 })
+
+
+const displayCart = async () => { //shows cart num in nav
+    console.log('fetching cart data..');
+
+    let data = await fetch('/get_cart')
+    data.json().then((parsedData) => {
+        if (parsedData.length > 0) {
+            document.getElementById('cart-num').textContent = `${parsedData.length}`;
+        }
+    })
+}
+
+displayCart()

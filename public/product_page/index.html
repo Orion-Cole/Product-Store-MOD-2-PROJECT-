@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
     <script src="https://kit.fontawesome.com/393bdf76e7.js" crossorigin="anonymous"></script> <!--font awesome icon library--> 
+    <link rel="icon" type="image/x-icon" href="../images/icons8-fast-cart-24.png">
 </head>
 <body>
 
@@ -22,14 +23,15 @@
     </div>
 
 
-    <nav><h1 class="hover-text" id="home-link">Home</h1> <h1 class="hover-text" id="add-product-link">Add New Product</h1> <div id="search-bar-container"><input id="search-bar" type="search" placeholder="Search"><button id="search-button"><img src="../images/search.png" width="10px" height="10px"></button></div><span id="search-icon" class="fa-solid fa-magnifying-glass fa-lg"></span></nav>    <!-- <h1>Product Page</h1> -->
+<nav><h1 class="hover-text" id="home-link">Home</h1> <h1 class="hover-text" id="add-product-link">Add New Product</h1> <div id="search-bar-container"><input id="search-bar" type="search" placeholder="Search"><button id="search-button"><img src="../images/search.png" width="10px" height="10px"></button></div><span id="search-icon" class="fa-solid fa-magnifying-glass fa-lg"></span><span id="cart-container"><span id="cart-num"></span><span id="cart-icon" class="fa-solid fa-cart-shopping fa-lg"></span></span></nav>
+    
     <div id="pop-up">
+        <span class="close" id="close-pop-up">&times;</span>
         <img id="cart-popup-image" alt="product image">
         <h2 id="add-cart-title"><span>item </span>added to cart</h2>
         <button id="continue-shopping-button">Continue Shopping</button>
         <div id="check-out-buttons">
             <button id="go-to-cart">Go to Cart</button>
-            <button id="go-to-checkout">Check Out</button>
         </div>
         
     </div>
